@@ -42,6 +42,10 @@ public class HelloMessageListener {
                 .message("World")
                 .build();
 
+        // spring implementation org.springframework.messaging
+        // jmsTemplate.convertAndSend((Destination) message.getHeaders().get("jms_replyTo"), "got it");
+
+        // jms implementation
         jmsTemplate.convertAndSend(message.getJMSReplyTo(), payloadMsg);
     }
 
